@@ -15,6 +15,7 @@ exports.createPost = async (req, res) => {
         category: { connect: { id: categoryId } },
         tags: { connect: tags.map((tagId) => ({ id: tagId })) },
       },
+      
     });
     res.status(201).json(newPost); // Stato 201 (Created) e restituisce il nuovo post creato
   } catch (error) {
